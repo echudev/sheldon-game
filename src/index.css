@@ -6,18 +6,25 @@
   font-family: "Barlow Semi Condensed";
   font-style: normal;
   font-weight: 600;
-  src: url("/fonts/BarlowSemiCondensed-SemiBold") format("woff2");
+  src: url("../public/fonts/BarlowSemiCondensed-SemiBold.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Barlow Semi Condensed";
   font-style: normal;
   font-weight: 700;
-  src: url("/fonts/BarlowSemiCondensed-Bold") format("woff2");
+  src: url("../public/fonts/BarlowSemiCondensed-Bold.woff2") format("woff2");
 }
 
 @layer base {
-  html {
-    font-family: Barlow Semi Condensed, system-ui, sans-serif;
+  body {
+    height: 100vh;
+    font-family: "Barlow Semi Condensed";
+    background-image: radial-gradient(
+      circle at top,
+      hsl(214, 47%, 23%) 20%,
+      hsl(237, 49%, 15%)
+    );
+    color: #ffffff;
   }
 }

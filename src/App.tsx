@@ -1,9 +1,13 @@
 function App() {
   return (
     <>
-      <h3 className="font-sans">Sheldo GAME!</h3>
-      <p className=''>No me cambia el color, no funciona nada</p>
-      <h2 className="m-10">Tailwind por favor te pido</h2>
+      <div>
+        <p className="text-score">PLAY AGAIN</p>
+        <p className="hover:font-mono hover:cursor-pointer text-yellow-300 m-10">
+          YOU PICKED
+        </p>
+        <h2 className="text-2xl hover:cursor-pointer m-10">YOU LOSE</h2>
+      </div>
     </>
   );
 }
