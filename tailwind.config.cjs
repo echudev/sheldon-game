@@ -51,6 +51,9 @@ module.exports = {
           { lineHeight: "36px", fontWeight: "600", letterSpacing: "0.2rem" },
         ],
       },
+      aspectRatio: {
+        '4/3': '4 / 3',
+      },
     },
   },
   plugins: [],
