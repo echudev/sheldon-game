@@ -16,7 +16,7 @@ Sheldon Cooper's Rock Paper Scissors version. Frontendmentor Challenge
 
 ### Link
 
-- Live Site URL:
+- Live Site URL: https://sheldon-game.vercel.app/
 
 ### Built with
 
