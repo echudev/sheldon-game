@@ -13,6 +13,8 @@ module.exports = {
         headerOutline: "hsl(217, 16%, 45%)",
       },
       backgroundImage: () => ({
+        "gradient-app":
+          "radial-gradient(circle at top, hsl(214, 47%, 23%) 20%, hsl(237, 49%, 15%))",
         "gradient-scissors": `linear-gradient(to top, hsl(39, 89%, 49%), hsl(40, 84%, 53%))`,
         "gradient-papper": `linear-gradient(to top, hsl(230, 89%, 62%), hsl(230, 89%, 65%))`,
         "gradient-rock": `linear-gradient(to top, hsl(349, 71%, 52%), hsl(349, 70%, 56%))`,
