@@ -20,6 +20,9 @@
   body {
     height: 100vh;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
     font-family: "Barlow Semi Condensed";
     background-image: radial-gradient(
       circle at top,
