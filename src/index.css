@@ -19,6 +19,7 @@
 @layer base {
   body {
     height: 100vh;
+    display: flex;
     font-family: "Barlow Semi Condensed";
     background-image: radial-gradient(
       circle at top,

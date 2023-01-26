@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         score: "hsl(229, 64%, 46%)",
         dark: "hsl(229, 25%, 31%)",
-        headerOutline: "hsl(217, 16%, 45%)"
+        headerOutline: "hsl(217, 16%, 45%)",
       },
       backgroundImage: () => ({
         "gradient-scissors": `linear-gradient(to top, hsl(39, 89%, 49%), hsl(40, 84%, 53%))`,
@@ -30,23 +30,23 @@ module.exports = {
       fontSize: {
         xs: [
           "11px",
-          { lineHeight: "18px", fontWeight: "600", letterSpacing: "-0.23px" },
+          { lineHeight: "18px", fontWeight: "600", letterSpacing: "0.2rem" },
         ],
         sm: [
           "12px",
-          { lineHeight: "15px", fontWeight: "600", letterSpacing: "-0.25px" },
+          { lineHeight: "15px", fontWeight: "600", letterSpacing: "0.2rem" },
         ],
         base: [
           "16px",
-          { lineHeight: "24px", fontWeight: "600", letterSpacing: "-0.8px" },
+          { lineHeight: "24px", fontWeight: "600", letterSpacing: "0.2rem" },
         ],
         lg: [
           "20px",
-          { lineHeight: "22px", fontWeight: "600", letterSpacing: "-0.63px" },
+          { lineHeight: "22px", fontWeight: "600", letterSpacing: "0.2rem" },
         ],
         xl: [
           "32px",
-          { lineHeight: "36px", fontWeight: "600", letterSpacing: "-1px" },
+          { lineHeight: "36px", fontWeight: "600", letterSpacing: "0.2rem" },
         ],
       },
     },

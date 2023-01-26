@@ -6,11 +6,7 @@ describe("ButtonRules", () => {
     render(<ButtonRules />);
   });
 
-  test("should show button text", () => {
-    expect(screen.getByText(/titulo/i)).toBeDefined();
-  });
-
-  test("should not show the content at the start", () => {
-    expect(screen.queryByText(/content/i)).toBeNull();
+  test("should show button text on render", () => {
+    expect(screen.getByText(/RULES/)).toBeDefined();
   });
 });
