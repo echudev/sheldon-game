@@ -1,9 +1,9 @@
-import Header from "./index";
+import GameToken from "./index";
 import { render, screen } from "@testing-library/react";
 
-describe("Header", () => {
+describe("GameToken", () => {
   beforeEach(() => {
-    render(<Header />);
+    render(<GameToken />);
   });
 
   test("should show svg logo all time", () => {
