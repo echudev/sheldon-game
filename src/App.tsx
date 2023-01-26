@@ -7,6 +7,7 @@ function App() {
           YOU PICKED
         </p>
         <h2 className="text-2xl hover:cursor-pointer m-10">YOU LOSE</h2>
+        <div className="h-[200px] w-[200px] rounded-lg m-10 bg-gradient-rock">Hola soy coso</div>
       </div>
     </>
   );

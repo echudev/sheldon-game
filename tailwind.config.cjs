@@ -1,17 +1,24 @@
 /** @type {import('tailwindcss').Config} */
-
 module.exports = {
   content: ["./index.html", "./src/**/*.{html,js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: {
+        mobile: "375px",
+        desktop: "1366px",
+      },
       colors: {
         score: "hsl(229, 64%, 46%)",
         dark: "hsl(229, 25%, 31%)",
+        headerOutline: "hsl(217, 16%, 45%)"
       },
-      screens: {
-        Desktop: "1366px",
-        Mobile: "375px",
-      },
+      backgroundImage: () => ({
+        "gradient-scissors": `linear-gradient(to top, hsl(39, 89%, 49%), hsl(40, 84%, 53%))`,
+        "gradient-papper": `linear-gradient(to top, hsl(230, 89%, 62%), hsl(230, 89%, 65%))`,
+        "gradient-rock": `linear-gradient(to top, hsl(349, 71%, 52%), hsl(349, 70%, 56%))`,
+        "gradient-lizard": `linear-gradient(to top, hsl(261, 73%, 60%), hsl(261, 72%, 63%))`,
+        "gradient-spock": `linear-gradient(to top, hsl(189, 59%, 53%), hsl(189, 58%, 57%))`,
+      }),
       boxShadow: {
         "brand-md": "0px 10px 10px -10px rgba(72, 84, 159, 0.100397)",
         "brand-lg": "0px 10px 20px rgba(72, 84, 159, 0.25)",
