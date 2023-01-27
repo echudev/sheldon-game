@@ -8,7 +8,7 @@ const Header = () => {
         <img
           src={logo}
           alt="logo"
-          className="flex max-h-20 sm:max-h-full p-2 sm:p-1"
+          className="flex max-h-20 p-2 sm:p-1"
         />
         <Score />
       </div>
