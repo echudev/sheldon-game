@@ -4,7 +4,7 @@ import Header from "./components/Header";
 
 function App() {
   return (
-    <div className="flex flex-col h-screen w-screen items-center bg-gradient-app">
+    <div className="relative flex flex-col h-screen w-screen max-w-5xl items-center">
       <Header />
       <GameToken variant="scissors"/>
       <ButtonRules />
