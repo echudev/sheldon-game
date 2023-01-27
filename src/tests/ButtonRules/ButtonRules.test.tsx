@@ -1,4 +1,4 @@
-import ButtonRules from "./index";
+import ButtonRules from "../../components/ButtonRules";
 import { render, screen } from "@testing-library/react";
 
 describe("ButtonRules", () => {

@@ -1,4 +1,4 @@
-import Score from "./index";
+import Score from "../../components/Score";
 import { render, screen } from "@testing-library/react";
 
 describe("Score board", () => {

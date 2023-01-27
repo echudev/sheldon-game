@@ -3,7 +3,7 @@ import Score from "../Score";
 
 const Header = () => {
   return (
-    <div className="container flex max-w-3xl mt-10 select-none">
+    <header className="container flex max-w-3xl mt-10 select-none">
       <div className="w-full py-4 px-6 flex items-center justify-between mx-8 border-4 rounded-xl border-headerOutline">
         <img
           src={logo}
@@ -12,7 +12,7 @@ const Header = () => {
         />
         <Score />
       </div>
-    </div>
+    </header>
   );
 };
 
