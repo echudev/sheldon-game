@@ -2,13 +2,13 @@ import GameToken from "./index";
 import { render, screen } from "@testing-library/react";
 
 describe("GameToken", () => {
-  beforeEach(() => {
-    render(<GameToken />);
-  });
 
-  test("should show svg logo all time", () => {
-    const logo = screen.getByAltText("logo");
-    expect(logo).toBeDefined();
+  test("Game token should have paper variant styles", () => {
+    render(<GameToken variant="paper" />); 
+
+    const token = screen.getByAltText(`${variant}-icon`);
+
+    expect(token).toBeDefined();
   });
 
   //   test("should not show the content at the start", () => {
