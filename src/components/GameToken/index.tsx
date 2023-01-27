@@ -14,8 +14,10 @@ interface Variants {
 const variants: Variants = {
   rock: "bg-gradient-rock shadow-token-rock hover:drop-shadow-hover-rock",
   paper: "bg-gradient-paper shadow-token-paper hover:drop-shadow-hover-paper",
-  scissors: "bg-gradient-scissors shadow-token-scissors hover:drop-shadow-hover-scissors",
-  lizard: "bg-gradient-lizard shadow-token-lizard hover:drop-shadow-hover-lizard",
+  scissors:
+    "bg-gradient-scissors shadow-token-scissors hover:drop-shadow-hover-scissors",
+  lizard:
+    "bg-gradient-lizard shadow-token-lizard hover:drop-shadow-hover-lizard",
   spock: "bg-gradient-spock shadow-token-spock hover:drop-shadow-hover-spock",
 };
 
@@ -30,13 +32,15 @@ const GameToken = ({ variant = "rock" }: Props) => {
 
   return (
     <div
-      className={`relative m-5 h-32 w-32 rounded-full flex justify-center items-center 
+      className={`relative m-5 rounded-full 
+      h-20 w-20 sm:h-32 sm:w-32 
+      flex justify-center items-center 
       hover:cursor-pointer transition-all hover:brightness-110 hover:scale-105 active:translate-y-1
       ${variants[variant as keyof Variants]}`}
     >
-      <div className="absolute h-24 w-24 z-10 bg-white rounded-full shadow-token-inner"></div>
+      <div className="absolute h-16 w-16 sm:h-24 sm:w-24 z-10 bg-white rounded-full shadow-token-inner"></div>
       <div className="absolute z-20 text-black">
-        <img alt={`${variant}-icon`} src={svg} />
+        <img alt={`${variant}-icon`} src={svg} className="scale-75 sm:scale-100" />
       </div>
     </div>
   );
