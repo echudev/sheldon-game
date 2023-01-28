@@ -30,11 +30,11 @@ module.exports = {
         "token-spock": "0px 5px hsl(189, 58%, 30%)",
       },
       dropShadow: {
-        "hover-rock": "0px 0px 10px hsl(349, 90%, 55%)",
-        "hover-paper": "0px 0px 10px hsl(230, 85%, 55%)",
-        "hover-scissors": "0px 0px 10px hsl(40, 85%, 55%)",
-        "hover-spock": "0px 0px 10px hsl(189, 85%, 45%)",
-        "hover-lizard": "0px 0px 10px hsl(260, 85%, 55%)",
+        "hover-rock": "0px 3px 7px hsl(349, 90%, 55%)",
+        "hover-paper": "0px 3px 7px hsl(230, 85%, 55%)",
+        "hover-scissors": "0px 3px 7px hsl(40, 85%, 45%)",
+        "hover-spock": "0px 3px 7px hsl(189, 85%, 45%)",
+        "hover-lizard": "0px 3px 7px hsl(260, 85%, 55%)",
       },
       fontFamily: {
         barlow: ["Barlow Semi Condensed", "sans-serif"],
