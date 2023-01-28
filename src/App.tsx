@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="relative flex flex-col h-screen w-screen max-w-5xl items-center">
       <Header />
-      <GameToken variant="scissors"/>
+      <GameToken variant="scissors" />
       <ButtonRules />
     </div>
   );
