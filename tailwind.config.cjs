@@ -20,6 +20,7 @@ module.exports = {
         "gradient-rock": `linear-gradient(to top, hsl(349, 71%, 52%), hsl(349, 70%, 56%))`,
         "gradient-lizard": `linear-gradient(to top, hsl(261, 73%, 60%), hsl(261, 72%, 63%))`,
         "gradient-spock": `linear-gradient(to top, hsl(189, 59%, 53%), hsl(189, 58%, 57%))`,
+        pentagon: "url('./assets/bg-pentagon.svg')",
       }),
       boxShadow: {
         "token-inner": "inset 0px 5px rgb(200, 210, 240)",
