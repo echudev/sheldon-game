@@ -36,11 +36,15 @@ const GameToken = ({ variant = "rock" }: Props) => {
       className={`relative m-5 rounded-full 
       h-20 w-20
       flex justify-center items-center 
-      hover:cursor-pointer transition-all hover:brightness-110 hover:scale-105 active:translate-y-1
+      hover:cursor-pointer transition-all hover:brightness-110 hover:scale-110 active:translate-y-1
       ${variants[variant as keyof Variants]}`}
     >
       <div className="absolute h-16 w-16 z-10 bg-white rounded-full shadow-token-inner"></div>
-      <img alt={`${variant}-icon`} src={svg} className="scale-75 z-20" />
+      <img
+        alt={`${variant}-icon`}
+        src={svg}
+        className="scale-50 z-20 h-full w-full object-contain"
+      />
     </div>
   );
 };
