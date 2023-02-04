@@ -4,7 +4,7 @@ import pentagon from "../../assets/bg-pentagon.svg";
 const TokenPicker = () => {
   return (
     <main className="flex flex-col items-center justify-center w-full max-w-3xl my-auto select-none aspect-4/3">
-      <div className="relative max-h-52 mobile:max-h-80 h-full aspect-square">
+      <div className="relative max-h-52 mobile:max-h-64 desktop:max-h-80 h-full aspect-square">
         <img alt="pentagon" src={pentagon} className="absolute w-full h-full" />
         <div className="absolute top-[-15%] left-[calc(50%-2.5rem)] mobile:left-[calc(50%-3.25rem)] desktop:left-[calc(50%-4rem)]">
           <GameToken variant="scissors" />
