@@ -11,7 +11,7 @@ describe("TokenPicker", () => {
   test("All 5 token variants must be displayed", () => {
     //   expect(screen.queryByText(/content/i)).toBeNull();
   });
-  test("When userPick is true TokenPiker component must not be rendered anymore", () => {
+  test("When userPick is true, TokenPiker component must not be rendered anymore", () => {
     // expect(screen.queryByText(/content/i)).toBeNull();
   });
 
