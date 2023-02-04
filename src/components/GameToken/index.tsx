@@ -33,7 +33,7 @@ const GameToken = ({ variant = "rock" }: Props) => {
   return (
     <div
       role="menuitem"
-      className={`relative m-5 rounded-full 
+      className={`relative rounded-full 
       h-20 w-20
       mobile:h-36 mobile:w-36
       flex justify-center items-center 
