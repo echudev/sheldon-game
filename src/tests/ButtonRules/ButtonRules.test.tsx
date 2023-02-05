@@ -1,5 +1,5 @@
 import ButtonRules from "../../components/ButtonRules";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 
 describe("ButtonRules", () => {
   let show: boolean = false;
@@ -16,7 +16,7 @@ describe("ButtonRules", () => {
 
   test("should change show to true on click", () => {
     const button = screen.getByText(/RULES/);
-
+    fireEvent.click(button);
     expect(show).toBe(true);
   });
 });

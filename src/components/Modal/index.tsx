@@ -1,18 +1,13 @@
-import { Dispatch, SetStateAction } from "react";
 import imgRules from "../../assets/image-rules.svg";
 import iconClose from "../../assets/icon-close.svg";
 import Backdrop from "../Backdrop";
 
 interface ModalProps {
   showModal: boolean;
-  setShowModal: Dispatch<SetStateAction<boolean>>;
+  openModalHandler: () => void;
 }
 
-const Modal = ({ showModal, setShowModal }: ModalProps) => {
-  const handlerCloseModal = () => {
-    setShowModal(false);
-  };
-
+const Modal = ({ showModal, openModalHandler }: ModalProps) => {
   return (
     <div
       role="modal-container"
@@ -20,7 +15,7 @@ const Modal = ({ showModal, setShowModal }: ModalProps) => {
         showModal ? "pointer-events-auto" : "pointer-events-none"
       }`}
     >
-      <Backdrop showModal={showModal} setShowModal={setShowModal} />
+      <Backdrop showModal={showModal} openModalHandler={openModalHandler} />
       <div
         role="modal-content"
         className={`absolute flex flex-col items-center justify-around z-40 h-full w-full mobile:max-w-[450px] mobile:max-h-[450px] rounded-xl bg-slate-100
@@ -40,7 +35,7 @@ const Modal = ({ showModal, setShowModal }: ModalProps) => {
           className="z-50 object-contain mb-6"
         />
         <button
-          onClick={handlerCloseModal}
+          onClick={openModalHandler}
           className="mobile:absolute mobile:top-8 mobile:right-8"
         >
           <img alt="icon-close" src={iconClose} className="z-50" />

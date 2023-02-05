@@ -6,12 +6,15 @@ import { useState } from "react";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
+  const openModalHandler = () => {
+    setShowModal(!showModal);
+  };
   return (
     <div className="relative flex flex-col h-screen w-screen max-w-5xl items-center">
       <Header />
       <TokenPicker />
-      <ButtonRules setShowModal={setShowModal} />
-      <Modal showModal={showModal} setShowModal={setShowModal} />
+      <ButtonRules openModalHandler={openModalHandler} />
+      <Modal showModal={showModal} openModalHandler={openModalHandler} />
     </div>
   );
 }

@@ -1,13 +1,8 @@
-import { Dispatch, SetStateAction } from "react";
-
 interface BtnProps {
-  setShowModal: Dispatch<SetStateAction<boolean>>;
+  openModalHandler: () => void;
 }
 
-const ButtonRules = (props: BtnProps) => {
-  const openModalHandler = () => {
-    props.setShowModal(true);
-  };
+const ButtonRules = ({ openModalHandler }: BtnProps) => {
   return (
     <button
       onClick={openModalHandler}

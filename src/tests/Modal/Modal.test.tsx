@@ -13,7 +13,8 @@ describe("Modal", () => {
   });
 
   test("Modal should be hidden at the start", () => {
-    expect(screen.queryByRole("modal-title")).toBeDefined();
+    const modal = screen.queryByRole("modal-title");
+    expect(modal.style.transform("translateY(-200%)")).toBeDefined();
   });
 
   //   test("Modal should be shown when RULES button clicked", () => {
