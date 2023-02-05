@@ -1,29 +1,31 @@
 import { Dispatch, SetStateAction } from "react";
 import imgRules from "../../assets/image-rules.svg";
 import iconClose from "../../assets/icon-close.svg";
+import Backdrop from "../Backdrop";
 
 interface ModalProps {
+  showModal: boolean;
   setShowModal: Dispatch<SetStateAction<boolean>>;
 }
 
-const Modal = (props: ModalProps) => {
-  const closeModalHandler = () => {
-    props.setShowModal(false);
+const Modal = ({ showModal, setShowModal }: ModalProps) => {
+  const handlerCloseModal = () => {
+    setShowModal(false);
   };
-  const backgroundClickHandler = (event: React.MouseEvent) => {
-    if (event.target === event.currentTarget) {
-      props.setShowModal(false);
-    }
-  };
+
   return (
     <div
-      role="modal"
-      onClick={backgroundClickHandler}
-      className="absolute z-20 flex justify-center items-center h-screen w-screen select-none backdrop-brightness-50 transition duration-700 ease-in"
+      role="modal-container"
+      className={`absolute w-screen h-screen flex items-center justify-center z-40 ${
+        showModal ? "pointer-events-auto" : "pointer-events-none"
+      }`}
     >
+      <Backdrop showModal={showModal} setShowModal={setShowModal} />
       <div
-        role="modal-background"
-        className="relative flex flex-col items-center justify-around z-40 h-full w-full mobile:max-w-[450px] mobile:max-h-[450px] rounded-xl bg-slate-100"
+        role="modal-content"
+        className={`absolute flex flex-col items-center justify-around z-40 h-full w-full mobile:max-w-[450px] mobile:max-h-[450px] rounded-xl bg-slate-100
+        transition-all ease-out duration-300
+         ${showModal ? "translate-y-0" : "translate-y-[-200%]"}`}
       >
         <h3
           role="modal-title"
@@ -32,14 +34,14 @@ const Modal = (props: ModalProps) => {
           Rules
         </h3>
         <img
-          role="modal-content"
+          role="modal-image"
           alt="img-rules"
           src={imgRules}
           className="z-50 object-contain mb-6"
         />
         <button
-          onClick={closeModalHandler}
-          className="mobile:absolute mobile:top-8 mobile:right-6"
+          onClick={handlerCloseModal}
+          className="mobile:absolute mobile:top-8 mobile:right-8"
         >
           <img alt="icon-close" src={iconClose} className="z-50" />
         </button>

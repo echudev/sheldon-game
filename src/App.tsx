@@ -11,7 +11,7 @@ function App() {
       <Header />
       <TokenPicker />
       <ButtonRules setShowModal={setShowModal} />
-      {showModal && <Modal setShowModal={setShowModal} />}
+      <Modal showModal={showModal} setShowModal={setShowModal} />
     </div>
   );
 }
