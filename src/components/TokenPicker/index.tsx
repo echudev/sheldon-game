@@ -15,10 +15,10 @@ const TokenPicker = () => {
         <div className="absolute top-[22%] left-[calc(100%-2.5rem)] mobile:left-[calc(100%-3.25rem)] desktop:left-[calc(100%-4rem)]">
           <GameToken variant="paper" />
         </div>
-        <div className="absolute bottom-[-15%]  left-[calc(25%-2.5rem)] mobile:left-[calc(25%-3.25rem)] desktop:left-[calc(25%-4rem)]">
+        <div className="absolute bottom-[-15%]  left-[calc(22%-2.5rem)] mobile:left-[calc(22%-3.25rem)] desktop:left-[calc(22%-4rem)]">
           <GameToken variant="lizard" />
         </div>
-        <div className="absolute bottom-[-15%] left-[calc(75%-2.5rem)] mobile:left-[calc(75%-3.25rem)] desktop:left-[calc(75%-4rem)]">
+        <div className="absolute bottom-[-15%] left-[calc(78%-2.5rem)] mobile:left-[calc(78%-3.25rem)] desktop:left-[calc(78%-4rem)]">
           <GameToken variant="rock" />
         </div>
       </div>
