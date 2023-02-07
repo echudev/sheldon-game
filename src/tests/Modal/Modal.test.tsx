@@ -2,36 +2,38 @@ import Modal from "../../components/Modal";
 import { render, screen, fireEvent } from "@testing-library/react";
 
 describe("Modal", () => {
-  let showModal = false;
-
-  function setShowModal() {
+  let showModal: boolean = true;
+  const openModalHandler = (): void => {
     showModal = !showModal;
-  }
+  };
 
   beforeEach(() => {
-    render(<Modal showModal={showModal} setShowModal={setShowModal} />);
+    render(<Modal showModal={showModal} openModalHandler={openModalHandler} />);
   });
 
-  test("Modal should be hidden at the start", () => {
-    const modal = screen.queryByRole("modal-title");
-    expect(modal.style.transform("translateY(-200%)")).toBeDefined();
+  test("Modal must show title, image content and close button", () => {
+    const title = screen.queryByText(/Rules/i);
+    const content = screen.queryByAltText("img-rules");
+    const closeButton = screen.queryByAltText("icon-close");
+
+    expect(title).toBeDefined();
+    expect(content).toBeDefined();
+    expect(closeButton).toBeDefined();
   });
 
-  //   test("Modal should be shown when RULES button clicked", () => {
-  //     const button = screen.getByText(/open/i);
-  //     fireEvent.click(button);
-  //     expect(screen.queryByText(/Score/i)).toBeDefined();
-  //   });
+  test("showModal should be false when close button is clicked", () => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const closeButton = screen.queryByAltText("icon-close")!;
+    fireEvent.click(closeButton);
+    expect(showModal).toBe(false);
+    fireEvent.click(closeButton);
+    expect(showModal).toBe(true);
+  });
 
-  //   test("Modal should be hidden when x button clicked", () => {
-  //     const button = screen.getByText(/open/i);
-  //     fireEvent.click(button);
-  //     expect(screen.queryByText(/Score/i)).toBeDefined();
-  //   });
-
-  //   test("Modal should be hidden when backdrop is clicked ONLY in big screens (>400px)", () => {
-  //     const button = screen.getByText(/open/i);
-  //     fireEvent.click(button);
-  //     expect(screen.queryByText(/Score/i)).toBeDefined();
-  //   });
+  test("showModal should be false when backdrop is clicked", () => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const backdrop = screen.queryByRole("presentation")!;
+    fireEvent.click(backdrop);
+    expect(showModal).toBe(false);
+  });
 });

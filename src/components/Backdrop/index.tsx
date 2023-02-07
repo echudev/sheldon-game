@@ -6,7 +6,8 @@ interface BackdropProps {
 const Backdrop = ({ showModal, openModalHandler }: BackdropProps) => {
   return (
     <div
-      role="dialog"
+      id="backdrop"
+      role="presentation"
       onClick={openModalHandler}
       className={`absolute z-30 flex justify-center items-center h-screen w-screen select-none backdrop-brightness-50 
        transition-opacity ease-in duration-300 
