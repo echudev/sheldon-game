@@ -45,7 +45,7 @@ const GameToken = ({ variant = "rock" }: Props) => {
       <img
         alt={`${variant}-icon`}
         src={svg}
-        className="scale-50 z-20 h-full w-full object-contain"
+        className="scale-[40%] z-20 h-full w-full object-contain"
       />
     </div>
   );
