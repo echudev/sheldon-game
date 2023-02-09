@@ -17,13 +17,13 @@ const Modal = ({ showModal, openModalHandler }: ModalProps) => {
     >
       <Backdrop showModal={showModal} openModalHandler={openModalHandler} />
       <div
-        id="modal-content"
+        aria-label="content"
         className={`absolute flex flex-col items-center justify-around z-40 h-full w-full mobile:max-w-[450px] mobile:max-h-[450px] rounded-xl bg-slate-100
         transition-all ease-out duration-300
          ${showModal ? "translate-y-0" : "translate-y-[-200%]"}`}
       >
         <h3
-          id="modal-title"
+          aria-label="title"
           className="z-50 text-dark text-xl font-bold mobile:mr-auto mobile:ml-6 mobile:mt-6"
         >
           Rules
@@ -34,7 +34,7 @@ const Modal = ({ showModal, openModalHandler }: ModalProps) => {
           className="z-50 object-contain mb-6"
         />
         <button
-          id="close-button"
+          aria-label="close"
           onClick={openModalHandler}
           className="mobile:absolute mobile:top-8 mobile:right-8"
         >

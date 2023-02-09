@@ -56,7 +56,7 @@ module.exports = {
         ],
         lg: [
           "20px",
-          { lineHeight: "22px", fontWeight: "600", letterSpacing: "0.2rem" },
+          { lineHeight: "22px", fontWeight: "600", letterSpacing: "0.1rem" },
         ],
         xl: [
           "32px",
@@ -65,30 +65,6 @@ module.exports = {
       },
       aspectRatio: {
         "4/3": "4 / 3",
-      },
-      keyframes: {
-        bkgFadeIn: {
-          "0%": { backdropFilter: "brightness(100%)" },
-          "100%": { backdropFilter: "brightness(50%)" },
-        },
-        bkgFadeout: {
-          "0%": { backdropFilter: "brightness(50%)" },
-          "100%": { backdropFilter: "brightness(100%)" },
-        },
-        modalEnter: {
-          "0%": { transform: "translateY(-2000px)" },
-          "100%": { transform: "translateY(0px)" },
-        },
-        modalLeave: {
-          "0%": { transform: "translateY(0px)" },
-          "100%": { transform: "translateY(-2000px)" },
-        },
-      },
-      animation: {
-        modalEnter: "modalEnter 0.2s cubic-bezier(0, 0.7, 0.22, 1.0);",
-        modalLeave: "modalLeave 0.3s ease-out",
-        bkgFadeIn: "bkgFadeIn 0.3s ease-in",
-        bkgFadeOut: "bkgFadeOut 3s ease-in",
       },
     },
   },
