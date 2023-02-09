@@ -11,7 +11,7 @@ function App() {
     setShowModal(!showModal);
   };
   return (
-    <div className="relative flex flex-col h-screen w-screen max-w-5xl items-center">
+    <div className="flex flex-col h-screen w-screen max-w-5xl items-center">
       <Header />
       {/* <TokenPicker /> */}
       <TokenBattle />
