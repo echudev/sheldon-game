@@ -52,7 +52,7 @@ module.exports = {
         ],
         base: [
           "16px",
-          { lineHeight: "24px", fontWeight: "600", letterSpacing: "0.2rem" },
+          { lineHeight: "24px", fontWeight: "600", letterSpacing: "0.1rem" },
         ],
         lg: [
           "20px",
