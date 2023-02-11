@@ -17,7 +17,7 @@ const router = createBrowserRouter([
         element: <TokenPicker />,
       },
       {
-        path: "tokenbattle/",
+        path: "tokenbattle",
         element: <TokenBattle />,
       },
     ],

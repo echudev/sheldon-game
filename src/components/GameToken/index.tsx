@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 
 interface Props {
-  variant?: "rock" | "paper" | "scissors" | "lizard" | "spock";
+  variant?: "rock" | "paper" | "scissors" | "lizard" | "spock" | "unset";
   size?: "normal" | "large";
 }
 
-interface Variants {
+interface VariantsStyles {
   rock: string;
   paper: string;
   scissors: string;
   lizard: string;
   spock: string;
 }
-const variants: Variants = {
+const variantsStyles: VariantsStyles = {
   rock: "bg-gradient-rock shadow-token-rock hover:drop-shadow-hover-rock",
   paper: "bg-gradient-paper shadow-token-paper hover:drop-shadow-hover-paper",
   scissors:
@@ -45,36 +45,49 @@ const sizes: Sizes = {
   },
 };
 
-const GameToken = ({ variant = "rock", size = "normal" }: Props) => {
+const GameToken = ({ variant = "unset", size = "normal" }: Props) => {
   const [svg, setSvg] = useState("rock");
 
   useEffect(() => {
-    import(`../../assets/icon-${variant}.svg`).then((module) => {
-      setSvg(module.default);
-    });
+    if (variant !== "unset") {
+      import(`../../assets/icon-${variant}.svg`).then((module) => {
+        setSvg(module.default);
+      });
+    }
   }, [variant]);
 
   return (
-    <div
-      aria-label="token-outline"
-      data-testid="gt"
-      className={`relative rounded-full
-      flex justify-center items-center 
-      hover:cursor-pointer transition-all hover:brightness-110 hover:scale-110 active:translate-y-1
-      ${sizes[size as keyof Sizes].outline}
-      ${variants[variant as keyof Variants]}`}
-    >
-      <div
-        aria-label="token-inner"
-        className={`absolute z-10 bg-white rounded-full shadow-token-inner
-        ${sizes[size as keyof Sizes].inner}`}
-      ></div>
-      <img
-        alt={`${variant}-icon`}
-        src={svg}
-        className="scale-[40%] z-20 h-full w-full object-contain"
-      />
-    </div>
+    <>
+      {variant !== "unset" ? (
+        <div
+          aria-label="token-outline"
+          data-testid="gt"
+          className={`relative rounded-full
+    flex justify-center items-center 
+    hover:cursor-pointer transition-all hover:brightness-110 hover:scale-110 active:translate-y-1
+    ${sizes[size as keyof Sizes].outline}
+    ${variantsStyles[variant as keyof VariantsStyles]}`}
+        >
+          <div
+            aria-label="token-inner"
+            className={`absolute z-10 bg-white rounded-full shadow-token-inner
+      ${sizes[size as keyof Sizes].inner}`}
+          ></div>
+          <img
+            alt={`${variant}-icon`}
+            src={svg}
+            className="scale-[40%] z-20 h-full w-full object-contain"
+          />
+        </div>
+      ) : (
+        <div
+          aria-label="token-outline"
+          data-testid="gt"
+          className={`relative rounded-full flex justify-center items-center bg-black bg-opacity-20
+          ${sizes[size as keyof Sizes].outline}`}
+        ></div>
+      )}
+    </>
   );
 };
 
