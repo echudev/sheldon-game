@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-type Variant = "rock" | "paper" | "scissors" | "lizard" | "spock" | undefined;
+type Variant = "rock" | "paper" | "scissors" | "lizard" | "spock" | "unset";
 
 interface GameStore {
   score: number;
@@ -14,6 +14,6 @@ export const useGameStore = create<GameStore>((set) => ({
   score: 0,
   increaseScore: (result) => set((state) => ({ score: state.score + result })),
   resetScore: () => set({ score: 0 }),
-  userToken: undefined,
+  userToken: "unset",
   setUserToken: (userSelect) => set({ userToken: userSelect }),
 }));

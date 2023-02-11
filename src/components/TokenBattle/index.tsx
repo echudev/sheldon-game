@@ -2,14 +2,12 @@ import ButtonPlayAgain from "../ButtonPlayAgain";
 import GameToken from "../GameToken";
 import { useGameStore } from "../../store/gameStore";
 import { getRandomToken } from "../../utils/getRandomToken";
+import { getWinner } from "../../utils/getWinner";
 
 const TokenBattle = () => {
-  type Result = "you win" | "you lose";
-  const result: Result = "you lose";
   const { userToken } = useGameStore();
   const houseToken = getRandomToken();
-
-  console.log(houseToken);
+  const result = getWinner(userToken, houseToken);
 
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 justify-items-center content-evenly w-full h-full select-none aspect-4/3">
