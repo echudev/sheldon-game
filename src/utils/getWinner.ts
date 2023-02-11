@@ -1,9 +1,14 @@
+import { useEffect } from "react";
+import { useGameStore } from "../store/gameStore";
+
 type Variant = "rock" | "paper" | "scissors" | "lizard" | "spock" | "unset";
 
 type Result = "you win" | "you lose" | "draw";
 type Rules = Record<string, Result>;
 
-export const getWinner = (user: Variant, home: Variant): Result => {
+export const getWinner = (user: Variant, home: Variant) => {
+  const { increaseScore } = useGameStore();
+
   const rules: Rules = {
     "paper rock": "you win",
     "rock paper": "you lose",
@@ -31,6 +36,16 @@ export const getWinner = (user: Variant, home: Variant): Result => {
     "rock rock": "draw",
     "lizard lizard": "draw",
   };
+
+  useEffect(() => {
+    if (rules[`${user} ${home}`] === "you win") {
+      increaseScore(1);
+    } else if (rules[`${user} ${home}`] === "you lose") {
+      increaseScore(-1);
+    } else if (rules[`${user} ${home}`] === "draw") {
+      increaseScore(0);
+    }
+  }, [user, home]);
 
   return rules[`${user} ${home}`];
 };
