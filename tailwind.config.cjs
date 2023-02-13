@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        mobile: "400px",
+        mobile: "375px",
         desktop: "1366px",
       },
       colors: {
@@ -65,6 +65,10 @@ module.exports = {
       },
       aspectRatio: {
         "4/3": "4 / 3",
+      },
+      transitionProperty: {
+        height: "height",
+        width: "width",
       },
     },
   },
