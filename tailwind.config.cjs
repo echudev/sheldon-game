@@ -76,23 +76,23 @@ module.exports = {
         shine: {
           "0%": {
             boxShadow:
-              "0px 0px 0px 10px hsl(0, 0%, 50%, 20% ), 0px 0px 0px 20px hsl(0, 0%, 40%, 20% ),  0px 0px 0px 30px hsl(0, 0%, 40%, 10% )",
+              "0px 0px 0px 10px hsl(0, 0%, 50%, 20% ), 0px 0px 0px 30px hsl(0, 0%, 40%, 20% ),  0px 0px 0px 40px hsl(0, 0%, 40%, 10% )",
             opacity: ".1",
           },
           "50%": {
             boxShadow:
-              "0px 0px 0px 20px hsl(0, 0%, 50%, 20% ), 0px 0px 0px 40px hsl(0, 0%, 40%, 20% ),  0px 0px 0px 60px hsl(0, 0%, 40%, 10% )",
+              "0px 0px 0px 30px hsl(0, 0%, 50%, 20% ), 0px 0px 0px 60px hsl(0, 0%, 40%, 20% ),  0px 0px 0px 100px hsl(0, 0%, 40%, 10% )",
             opacity: "1",
           },
           "100%": {
             boxShadow:
-              "0px 0px 0px 30px hsl(0, 0%, 50%, 20% ), 0px 0px 0px 60px hsl(0, 0%, 40%, 20% ),  0px 0px 0px 90px hsl(0, 0%, 40%, 10% )",
+              "0px 0px 0px 60px hsl(0, 0%, 50%, 20% ), 0px 0px 0px 115px hsl(0, 0%, 40%, 20% ),  0px 0px 0px 160px hsl(0, 0%, 40%, 10% )",
             opacity: "0",
           },
         },
       },
       animation: {
-        shine: "shine 1.5s linear infinite",
+        shine: "shine 2s linear infinite",
       },
     },
   },

@@ -21,10 +21,14 @@ const TokenBattle = () => {
   }, [houseToken]);
 
   return (
-    <div className="relative flex sm:items-center justify-center w-full h-full select-none aspect-4/3">
+    <div
+      className="grid grid-cols-2 grid-rows-2 items-center
+                 sm:flex sm:items-center sm:justify-center
+                 w-full max-w-4xl h-[350px] mobile:h-full pt-10 sm:pt-0 select-none aspect-4/3"
+    >
       <div
         aria-label="user-token"
-        className="flex flex-col sm:flex-col-reverse items-center mobile:mt-20 sm:mt-0"
+        className="order-1 h-min flex flex-col sm:flex-col-reverse items-center"
       >
         <GameToken
           variant={userToken}
@@ -37,8 +41,8 @@ const TokenBattle = () => {
       </div>
       <div
         aria-label="result-container"
-        className={`flex flex-col items-center transition-width delay-500 absolute bottom-0 sm:relative overflow-hidden mobile:mb-20 mt-32 mx-5
-        ${showResult} max-w-[250px] scale-75 mobile:scale-100`}
+        className={`order-3 h-min sm:order-2 col-span-2 flex flex-col items-center transition-width delay-500 overflow-hidden
+        ${showResult} scale-75 mobile:scale-100`}
       >
         <h2 className="text-center text-6xl mb-4 whitespace-nowrap">
           {result}
@@ -47,7 +51,7 @@ const TokenBattle = () => {
       </div>
       <div
         aria-label="house-token"
-        className="flex flex-col sm:flex-col-reverse items-center mobile:mt-20 sm:mt-0"
+        className="order-2 h-min sm:order-3 flex flex-col sm:flex-col-reverse items-center"
       >
         <GameToken
           variant={houseToken}
