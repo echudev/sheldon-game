@@ -42,7 +42,7 @@ const TokenBattle = () => {
       <div
         aria-label="result-container"
         className={`order-3 h-min sm:order-2 col-span-2 flex flex-col items-center transition-width delay-500 overflow-hidden
-        ${showResult} scale-75 mobile:scale-100`}
+        ${showResult} scale-75 mobile:scale-100 sm:m-5`}
       >
         <h2 className="text-center text-6xl mb-4 whitespace-nowrap">
           {result}

@@ -82,7 +82,7 @@ const GameToken = ({
     ${variantsStyles[variant as keyof VariantsStyles]}`}
         >
           <div
-            className={`absolute h-full w-full rounded-full ${winnerStyles[variant]} ${hidden}`}
+            className={`absolute -z-10 h-full w-full rounded-full ${winnerStyles[variant]} ${hidden}`}
           ></div>
           <div
             aria-label="token-inner"
