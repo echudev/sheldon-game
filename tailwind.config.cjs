@@ -29,6 +29,8 @@ module.exports = {
         "token-scissors": "0px 5px hsl(40, 75%, 25%)",
         "token-lizard": "0px 5px hsl(261, 62%, 40%)",
         "token-spock": "0px 5px hsl(189, 58%, 30%)",
+        winner:
+          "0px 0px 0px 10px hsl(0, 0%, 50%, 20% ), 0px 0px 0px 25px hsl(0, 0%, 40%, 20% ),  0px 0px 0px 35px hsl(0, 0%, 40%, 10% )",
       },
       dropShadow: {
         "hover-rock": "0px 3px 7px hsl(349, 90%, 55%)",
@@ -69,6 +71,28 @@ module.exports = {
       transitionProperty: {
         height: "height",
         width: "width",
+      },
+      keyframes: {
+        shine: {
+          "0%": {
+            boxShadow:
+              "0px 0px 0px 10px hsl(0, 0%, 50%, 20% ), 0px 0px 0px 20px hsl(0, 0%, 40%, 20% ),  0px 0px 0px 30px hsl(0, 0%, 40%, 10% )",
+            opacity: ".1",
+          },
+          "50%": {
+            boxShadow:
+              "0px 0px 0px 20px hsl(0, 0%, 50%, 20% ), 0px 0px 0px 40px hsl(0, 0%, 40%, 20% ),  0px 0px 0px 60px hsl(0, 0%, 40%, 10% )",
+            opacity: "1",
+          },
+          "100%": {
+            boxShadow:
+              "0px 0px 0px 30px hsl(0, 0%, 50%, 20% ), 0px 0px 0px 60px hsl(0, 0%, 40%, 20% ),  0px 0px 0px 90px hsl(0, 0%, 40%, 10% )",
+            opacity: "0",
+          },
+        },
+      },
+      animation: {
+        shine: "shine 1.5s linear infinite",
       },
     },
   },

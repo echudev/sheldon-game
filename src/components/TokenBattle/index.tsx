@@ -26,7 +26,11 @@ const TokenBattle = () => {
         aria-label="user-token"
         className="flex flex-col sm:flex-col-reverse items-center mobile:mt-20 sm:mt-0"
       >
-        <GameToken variant={userToken} size="large" />
+        <GameToken
+          variant={userToken}
+          size="large"
+          hidden={result === "you win" ? "" : "hidden"}
+        />
         <p className="m-6 w-full text-center sm:m-10 mobile:text-lg">
           you picked
         </p>
@@ -45,7 +49,11 @@ const TokenBattle = () => {
         aria-label="house-token"
         className="flex flex-col sm:flex-col-reverse items-center mobile:mt-20 sm:mt-0"
       >
-        <GameToken variant={houseToken} size="large" />
+        <GameToken
+          variant={houseToken}
+          size="large"
+          hidden={result === "you lose" ? "" : "hidden"}
+        />
         <p className="m-6 w-full text-center sm:m-10 mobile:text-lg">
           the house picked
         </p>

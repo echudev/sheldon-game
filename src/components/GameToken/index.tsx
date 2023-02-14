@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 interface Props {
   variant?: "rock" | "paper" | "scissors" | "lizard" | "spock" | "unset";
   size?: "normal" | "large";
+  hidden?: "" | "hidden";
 }
 
 interface VariantsStyles {
@@ -45,7 +46,19 @@ const sizes: Sizes = {
   },
 };
 
-const GameToken = ({ variant = "unset", size = "normal" }: Props) => {
+const winnerStyles: VariantsStyles = {
+  rock: "animate-shine drop-shadow-hover-rock",
+  paper: "animate-shine drop-shadow-hover-paper",
+  scissors: "animate-shine drop-shadow-hover-scissors",
+  lizard: "animate-shine drop-shadow-hover-lizard",
+  spock: "animate-shine drop-shadow-hover-spock",
+};
+
+const GameToken = ({
+  variant = "unset",
+  size = "normal",
+  hidden = "hidden",
+}: Props) => {
   const [svg, setSvg] = useState("rock");
 
   useEffect(() => {
@@ -64,10 +77,13 @@ const GameToken = ({ variant = "unset", size = "normal" }: Props) => {
           data-testid="gt"
           className={`relative rounded-full
     flex justify-center items-center 
-    hover:cursor-pointer transition-all hover:brightness-110 hover:scale-110 active:translate-y-1
+    hover:cursor-pointer transition-all hover:brightness-110 active:translate-y-1
     ${sizes[size as keyof Sizes].outline}
     ${variantsStyles[variant as keyof VariantsStyles]}`}
         >
+          <div
+            className={`absolute h-full w-full rounded-full ${winnerStyles[variant]} ${hidden}`}
+          ></div>
           <div
             aria-label="token-inner"
             className={`absolute z-10 bg-white rounded-full shadow-token-inner
