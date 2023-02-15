@@ -11,6 +11,7 @@ const Modal = ({ showModal, openModalHandler }: ModalProps) => {
   return (
     <div
       role="dialog"
+      aria-label="dialog"
       className={`absolute w-screen h-screen flex items-center justify-center z-40 ${
         showModal ? "pointer-events-auto" : "pointer-events-none"
       }`}
