@@ -4,6 +4,7 @@ import GameToken from "../GameToken";
 import { useGameStore } from "../../store/gameStore";
 import { getRandomToken } from "../../hooks/getRandomToken";
 import { getWinner } from "../../hooks/getWinner";
+import { LoadingToken } from "../LoadingToken";
 
 type ResultWidth = "w-0" | "w-full";
 
@@ -33,7 +34,7 @@ const TokenBattle = () => {
         <GameToken
           variant={userToken}
           size="large"
-          hidden={result === "you win" ? "" : "hidden"}
+          hideShadow={result !== "you win"}
         />
         <p className="m-6 w-full text-center sm:m-10 mobile:text-lg">
           you picked
@@ -53,12 +54,19 @@ const TokenBattle = () => {
         aria-label="house-token"
         className="order-2 h-min sm:order-3 flex flex-col sm:flex-col-reverse items-center"
       >
-        <GameToken
-          variant={houseToken}
-          size="large"
-          hidden={result === "you lose" ? "" : "hidden"}
-        />
-        <p className="m-6 w-full text-center sm:m-10 mobile:text-lg">
+        {houseToken === "unset" ? (
+          <LoadingToken />
+        ) : (
+          <GameToken
+            variant={houseToken}
+            size="large"
+            hideShadow={result !== "you lose"}
+          />
+        )}
+        <p
+          className={`m-6 w-full text-center sm:m-10 mobile:text-lg 
+          ${houseToken === "unset" ? "opacity-0" : "opacity-1"} transition`}
+        >
           the house picked
         </p>
       </div>

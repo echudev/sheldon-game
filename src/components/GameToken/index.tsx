@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 interface Props {
   variant?: "rock" | "paper" | "scissors" | "lizard" | "spock" | "unset";
   size?: "normal" | "large";
-  hidden?: "" | "hidden";
+  hideShadow?: boolean;
 }
 
 interface VariantsStyles {
@@ -57,9 +57,9 @@ const winnerStyles: VariantsStyles = {
 const GameToken = ({
   variant = "unset",
   size = "normal",
-  hidden = "hidden",
+  hideShadow = true,
 }: Props) => {
-  const [svg, setSvg] = useState("rock");
+  const [svg, setSvg] = useState<Props["variant"]>("rock");
 
   useEffect(() => {
     if (variant !== "unset") {
@@ -82,7 +82,9 @@ const GameToken = ({
     ${variantsStyles[variant as keyof VariantsStyles]}`}
         >
           <div
-            className={`absolute -z-10 h-full w-full rounded-full ${winnerStyles[variant]} ${hidden}`}
+            className={`absolute -z-10 h-full w-full rounded-full ${
+              winnerStyles[variant]
+            } ${hideShadow ? "hidden" : ""}`}
           ></div>
           <div
             aria-label="token-inner"
