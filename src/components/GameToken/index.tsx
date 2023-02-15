@@ -73,7 +73,6 @@ const GameToken = ({
     <>
       {variant !== "unset" ? (
         <div
-          aria-label="token-outline"
           data-testid="gt"
           className={`relative rounded-full
     flex justify-center items-center 
@@ -87,7 +86,6 @@ const GameToken = ({
             } ${hideShadow ? "hidden" : ""}`}
           ></div>
           <div
-            aria-label="token-inner"
             className={`absolute z-10 bg-white rounded-full shadow-token-inner
       ${sizes[size as keyof Sizes].inner}`}
           ></div>
@@ -99,7 +97,6 @@ const GameToken = ({
         </div>
       ) : (
         <div
-          aria-label="token-outline"
           data-testid="gt"
           className={`relative rounded-full flex justify-center items-center bg-black bg-opacity-20
           ${sizes[size as keyof Sizes].outline}`}
