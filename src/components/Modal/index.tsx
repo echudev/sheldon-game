@@ -18,15 +18,11 @@ const Modal = ({ showModal, openModalHandler }: ModalProps) => {
     >
       <Backdrop showModal={showModal} openModalHandler={openModalHandler} />
       <div
-        aria-label="content"
         className={`absolute flex flex-col items-center justify-around z-40 h-full w-full mobile:max-w-[450px] mobile:max-h-[450px] rounded-xl bg-slate-100
         transition-all ease-out duration-300
          ${showModal ? "translate-y-0" : "translate-y-[-200%]"}`}
       >
-        <h3
-          aria-label="title"
-          className="z-50 text-dark text-xl font-bold mobile:mr-auto mobile:ml-6 mobile:mt-6"
-        >
+        <h3 className="z-50 text-dark text-xl font-bold mobile:mr-auto mobile:ml-6 mobile:mt-6">
           Rules
         </h3>
         <img
