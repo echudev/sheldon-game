@@ -7,6 +7,7 @@ const TokenPicker = () => {
   const { setUserToken } = useGameStore();
   return (
     <main className="flex flex-col items-center justify-center h-full w-full max-w-3xl my-auto select-none aspect-4/3">
+      <h1 className="hidden">Rock Paper Scissors Lizard Spock</h1>
       <div className="relative max-h-52 mobile:max-h-64 desktop:max-h-80 h-full aspect-square">
         <img alt="pentagon" src={pentagon} className="absolute w-full h-full" />
         <Link
