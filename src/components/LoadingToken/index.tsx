@@ -1,7 +1,6 @@
 import GameToken from "../GameToken";
 import { useState, useEffect } from "react";
-
-type Variants = "rock" | "paper" | "scissors" | "lizard" | "spock" | "unset";
+import { Variants } from "../../utils/types";
 
 export const LoadingToken = () => {
   const [variant, setVariant] = useState<Variants>("unset");

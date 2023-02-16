@@ -1,13 +1,18 @@
 import { useGameStore } from "../store/gameStore";
 import { useEffect, useState } from "react";
-
-type Variant = "rock" | "paper" | "scissors" | "lizard" | "spock" | "unset";
+import { Variants } from "../utils/types";
 
 export const getRandomToken = () => {
   const waitTime: number = 2000;
-  const [houseToken, setHouseToken] = useState<Variant>("unset");
+  const [houseToken, setHouseToken] = useState<Variants>("unset");
   const { userToken } = useGameStore();
-  const variantes: Variant[] = ["lizard", "spock", "rock", "scissors", "paper"];
+  const variantes: Variants[] = [
+    "lizard",
+    "spock",
+    "rock",
+    "scissors",
+    "paper",
+  ];
 
   const generateRandom = (min: number, max: number): number => {
     return Math.floor(Math.random() * (max - min + 1)) + min;

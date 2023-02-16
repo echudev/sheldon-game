@@ -1,12 +1,11 @@
 import { useEffect } from "react";
 import { useGameStore } from "../store/gameStore";
-
-type Variant = "rock" | "paper" | "scissors" | "lizard" | "spock" | "unset";
+import { Variants } from "../utils/types";
 
 type Result = "you win" | "you lose" | "draw";
 type Rules = Record<string, Result>;
 
-export const getWinner = (user: Variant, home: Variant) => {
+export const getWinner = (user: Variants, home: Variants) => {
   const { increaseScore } = useGameStore();
 
   const rules: Rules = {
